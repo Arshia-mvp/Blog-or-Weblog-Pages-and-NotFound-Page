@@ -1,0 +1,330 @@
+@import "tailwindcss";
+
+@keyframes cinematicUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 90px, 0) scale(0.94) rotateX(10deg);
+    filter: blur(14px);
+    clip-path: inset(12% 0 0 0);
+  }
+
+  35% {
+    opacity: 0.65;
+    transform: translate3d(0, 24px, 0) scale(0.985) rotateX(3deg);
+    filter: blur(5px);
+    clip-path: inset(3% 0 0 0);
+  }
+
+  70% {
+    opacity: 0.95;
+    transform: translate3d(0, 4px, 0) scale(0.998) rotateX(0deg);
+    filter: blur(1px);
+    clip-path: inset(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotateX(0deg);
+    filter: blur(0);
+    clip-path: inset(0);
+  }
+}
+
+@keyframes cinematicLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-110px, 35px, 0) rotateY(10deg) scale(0.95);
+    filter: blur(12px);
+    clip-path: inset(0 12% 0 0);
+  }
+
+  35% {
+    opacity: 0.65;
+    transform: translate3d(-32px, 8px, 0) rotateY(3deg) scale(0.985);
+    filter: blur(5px);
+    clip-path: inset(0 4% 0 0);
+  }
+
+  70% {
+    opacity: 0.95;
+    transform: translate3d(-5px, 0, 0) rotateY(0deg) scale(0.998);
+    filter: blur(1px);
+    clip-path: inset(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
+    filter: blur(0);
+    clip-path: inset(0);
+  }
+}
+
+@keyframes cinematicRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(110px, 35px, 0) rotateY(-10deg) scale(0.95);
+    filter: blur(12px);
+    clip-path: inset(0 0 0 12%);
+  }
+
+  35% {
+    opacity: 0.65;
+    transform: translate3d(32px, 8px, 0) rotateY(-3deg) scale(0.985);
+    filter: blur(5px);
+    clip-path: inset(0 0 0 4%);
+  }
+
+  70% {
+    opacity: 0.95;
+    transform: translate3d(5px, 0, 0) rotateY(0deg) scale(0.998);
+    filter: blur(1px);
+    clip-path: inset(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
+    filter: blur(0);
+    clip-path: inset(0);
+  }
+}
+
+@keyframes cinematicZoom {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) translate3d(0, 55px, 0) rotateX(12deg)
+      scale(0.84);
+    filter: blur(16px);
+    clip-path: inset(10%);
+  }
+
+  30% {
+    opacity: 0.55;
+    transform: perspective(1200px) translate3d(0, 18px, 0) rotateX(5deg)
+      scale(0.94);
+    filter: blur(7px);
+    clip-path: inset(4%);
+  }
+
+  65% {
+    opacity: 0.9;
+    transform: perspective(1200px) translate3d(0, 4px, 0) rotateX(1deg)
+      scale(0.99);
+    filter: blur(2px);
+    clip-path: inset(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0deg) scale(1);
+    filter: blur(0);
+    clip-path: inset(0);
+  }
+}
+
+@keyframes cinematicScale {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(8deg) scale(0.84);
+    filter: blur(12px);
+  }
+
+  40% {
+    opacity: 0.7;
+    transform: perspective(1000px) rotateX(3deg) scale(0.95);
+    filter: blur(4px);
+  }
+
+  75% {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg) scale(1.01);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+.scroll-reveal-up,
+.scroll-reveal-left,
+.scroll-reveal-right,
+.scroll-reveal-zoom,
+.scroll-reveal-scale {
+  position: relative;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity, filter, clip-path;
+}
+
+@supports (animation-timeline: view()) {
+  .scroll-reveal-up {
+    animation: cinematicUp 1ms linear both;
+    animation-timeline: view(block);
+    animation-range: entry 5% cover 42%;
+  }
+
+  .scroll-reveal-left {
+    animation: cinematicLeft 1ms linear both;
+    animation-timeline: view(block);
+    animation-range: entry 5% cover 42%;
+  }
+
+  .scroll-reveal-right {
+    animation: cinematicRight 1ms linear both;
+    animation-timeline: view(block);
+    animation-range: entry 5% cover 42%;
+  }
+
+  .scroll-reveal-zoom {
+    animation: cinematicZoom 1ms linear both;
+    animation-timeline: view(block);
+    animation-range: entry 5% cover 42%;
+  }
+
+  .scroll-reveal-scale {
+    animation: cinematicScale 1ms linear both;
+    animation-timeline: view(block);
+    animation-range: entry 5% cover 42%;
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(55px) scale(0.92) rotateX(7deg);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
+    filter: blur(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .scroll-card {
+    animation: cardReveal 1ms linear both;
+    animation-timeline: view(block);
+    animation-range: entry 8% cover 32%;
+  }
+}
+
+.scroll-card {
+  transform-style: preserve-3d;
+  transition:
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+}
+
+.scroll-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.08) 45%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition:
+    opacity 500ms ease,
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-card:hover::before {
+  opacity: 1;
+  transform: translateX(120%);
+}
+
+.scroll-reveal-up::after,
+.scroll-reveal-left::after,
+.scroll-reveal-right::after,
+.scroll-reveal-zoom::after,
+.scroll-reveal-scale::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  width: 72px;
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(34, 211, 238, 0.8),
+    rgba(139, 92, 246, 0)
+  );
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition:
+    opacity 500ms ease,
+    transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal-up:hover::after,
+.scroll-reveal-left:hover::after,
+.scroll-reveal-right:hover::after,
+.scroll-reveal-zoom:hover::after,
+.scroll-reveal-scale:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+@keyframes scrollProgress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.scroll-progress {
+  transform-origin: left center;
+  will-change: transform;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: scrollProgress 1ms linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal-up,
+  .scroll-reveal-left,
+  .scroll-reveal-right,
+  .scroll-reveal-zoom,
+  .scroll-reveal-scale,
+  .scroll-card {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+  }
+
+  .scroll-progress {
+    animation: none !important;
+    transform: scaleX(1) !important;
+  }
+}
