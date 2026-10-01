@@ -1,9 +1,10 @@
 import Link from "next/link";
 
-export let metadata = {
-  title : "Learn Page",
-  description : "Hello , there is a Learn Page . this page about blog/learn page . descriptions about Learn page.",
-}
+export const metadata = {
+  title: "Learn Page",
+  description:
+    "Hello, there is a Learn Page. this page about blog/learn page. descriptions about Learn page.",
+};
 
 export default async function LearnPage({ params }) {
   const { slug } = await params;
@@ -12,9 +13,7 @@ export default async function LearnPage({ params }) {
     <main className="relative min-h-screen overflow-x-clip bg-slate-950 text-slate-100 isolate">
       <div className="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
         <div className="absolute left-1/2 top-[-300px] h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-cyan-400/[0.07] blur-[150px]" />
-
         <div className="absolute right-[-180px] top-[35%] h-[500px] w-[500px] rounded-full bg-violet-500/[0.07] blur-[150px]" />
-
         <div className="absolute bottom-[-220px] left-[-180px] h-[480px] w-[480px] rounded-full bg-blue-500/[0.05] blur-[150px]" />
 
         <div
@@ -48,6 +47,7 @@ export default async function LearnPage({ params }) {
               <span className="hidden sm:inline">
                 Back to next.js Page (slug)
               </span>
+
               <span className="sm:hidden">Back</span>
             </Link>
           </div>
@@ -70,7 +70,6 @@ export default async function LearnPage({ params }) {
           </Link>
 
           <span className="text-slate-700">/</span>
-
           <span className="text-slate-300">Learn</span>
         </nav>
 
@@ -387,17 +386,25 @@ export default async function LearnPage({ params }) {
                     <code>{`import Link from "next/link";
 
 export default async function LearnPage({ params }) {
+
   const { slug } = await params;
 
   return (
+
     <main>
+
       <h1>Learn more about {slug}</h1>
 
       <Link href={\`/blogs/\${slug}\`}>
+
         Back to Article
+
       </Link>
+
     </main>
+
   );
+
 }`}</code>
                   </pre>
                 </div>

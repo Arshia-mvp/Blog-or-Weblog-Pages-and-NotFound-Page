@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { notFound } from "next/navigation";
 
 const blogData = {
@@ -16,10 +17,11 @@ const blogData = {
   },
 };
 
-export let metadata = {
-  title : "About Blog Next.js Page",
-  description : "Hello , there is a slug(Next.js) Page . this page about blog/slug or next.js page . descriptions about next.js page.",
-}
+export const metadata = {
+  title: "About Blog Next.js Page",
+  description:
+    "Hello, there is a slug(Next.js) Page. this page about blog/slug or next.js page. descriptions about next.js page.",
+};
 
 export default async function BlogPage({ params }) {
   const { slug } = await params;
@@ -66,6 +68,7 @@ export default async function BlogPage({ params }) {
               Dev<span className="text-cyan-400">Blog</span>
             </span>
           </Link>
+
           <Link
             href="/"
             className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-slate-300 transition duration-300 hover:border-cyan-400/30 hover:bg-cyan-400/[0.08] hover:text-white"
@@ -85,11 +88,8 @@ export default async function BlogPage({ params }) {
           </Link>
 
           <span>/</span>
-
           <span>Blogs</span>
-
           <span>/</span>
-
           <span className="text-slate-300">{slug}</span>
         </nav>
 
@@ -110,12 +110,15 @@ export default async function BlogPage({ params }) {
                 {blog.date}
               </time>
             </div>
+
             <h1 className="mt-7 max-w-4xl text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
               {blog.title}
             </h1>
+
             <p className="mt-7 max-w-3xl text-base leading-8 text-slate-400 sm:text-lg">
               {blog.excerpt}
             </p>
+
             <div className="mt-9 flex items-center gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-gradient-to-br from-cyan-400 to-violet-500 text-sm font-black text-slate-950 shadow-lg shadow-cyan-500/10">
                 AP
@@ -123,10 +126,10 @@ export default async function BlogPage({ params }) {
 
               <div>
                 <p className="font-semibold text-white">{blog.author}</p>
-
                 <p className="mt-0.5 text-sm text-slate-500">{blog.role}</p>
               </div>
             </div>
+
             <div className="mt-7 flex flex-wrap gap-2">
               {blog.tags.map((tag) => (
                 <span
@@ -137,22 +140,20 @@ export default async function BlogPage({ params }) {
                 </span>
               ))}
             </div>
+
             <div className="mt-10 grid max-w-xl grid-cols-3 border-y border-white/10 py-5">
               <div>
                 <p className="text-xl font-bold text-white">08</p>
-
                 <p className="mt-1 text-xs text-slate-500">Minutes</p>
               </div>
 
               <div className="border-l border-white/10 pl-5">
                 <p className="text-xl font-bold text-white">04</p>
-
                 <p className="mt-1 text-xs text-slate-500">Topics</p>
               </div>
 
               <div className="border-l border-white/10 pl-5">
                 <p className="text-xl font-bold text-white">01</p>
-
                 <p className="mt-1 text-xs text-slate-500">Article</p>
               </div>
             </div>
@@ -166,6 +167,7 @@ export default async function BlogPage({ params }) {
                 <div className="absolute left-[-80px] top-[-80px] h-56 w-56 rounded-full bg-cyan-400/20 blur-[100px]" />
 
                 <div className="absolute bottom-[-80px] right-[-80px] h-56 w-56 rounded-full bg-violet-500/20 blur-[100px]" />
+
                 <div className="relative m-5 overflow-hidden rounded-2xl border border-white/10 bg-black/30 shadow-2xl">
                   <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.03] px-4 py-3">
                     <span className="group flex h-3.5 w-3.5 cursor-pointer items-center justify-center rounded-full bg-rose-400/90 text-[9px] font-black leading-none text-rose-950 transition-all duration-200 hover:scale-110 hover:bg-rose-300">
@@ -173,11 +175,13 @@ export default async function BlogPage({ params }) {
                         ×
                       </span>
                     </span>
+
                     <span className="group flex h-3.5 w-3.5 cursor-pointer items-center justify-center rounded-full bg-amber-300/90 text-[9px] font-black leading-none text-amber-950 transition-all duration-200 hover:scale-110 hover:bg-amber-200">
                       <span className="opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                         −
                       </span>
                     </span>
+
                     <span className="group flex h-3.5 w-3.5 cursor-pointer items-center justify-center rounded-full bg-emerald-400/90 text-[8px] font-black leading-none text-emerald-950 transition-all duration-200 hover:scale-110 hover:bg-emerald-300">
                       <span className="opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                         ↗
@@ -186,6 +190,7 @@ export default async function BlogPage({ params }) {
 
                     <div className="ml-3 h-2 w-24 rounded-full bg-white/10" />
                   </div>
+
                   <div className="space-y-3 p-5 font-mono text-xs leading-6 sm:text-sm">
                     <div>
                       <span className="text-violet-400">const</span>{" "}
@@ -220,6 +225,7 @@ export default async function BlogPage({ params }) {
                     <div className="pl-4">);</div>
                   </div>
                 </div>
+
                 <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <span className="w-fit rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
                     Dynamic Route
@@ -259,6 +265,7 @@ export default async function BlogPage({ params }) {
                   the interface, user experience and product itself.
                 </p>
               </section>
+
               <section id="dynamic-routes" className="scroll-reveal-right">
                 <div className="mb-5 flex items-center gap-3">
                   <span className="h-8 w-1 rounded-full bg-gradient-to-b from-cyan-400 to-violet-500" />
@@ -275,6 +282,7 @@ export default async function BlogPage({ params }) {
                   the page to work with different URL values without creating a
                   separate folder for every article.
                 </p>
+
                 <div className="mt-7 overflow-hidden rounded-2xl border border-white/10 bg-[#080c14] shadow-xl shadow-black/20">
                   <div className="flex items-center justify-between border-b border-white/10 px-5 py-3">
                     <span className="text-xs font-medium text-slate-500">
@@ -289,31 +297,24 @@ export default async function BlogPage({ params }) {
                   <div className="overflow-x-auto p-5">
                     <code className="whitespace-nowrap font-mono text-sm leading-8">
                       <span className="text-slate-500">/blogs/</span>
-
                       <span className="text-violet-400">[slug]</span>
-
                       <br />
                       <br />
-
                       <span className="text-slate-500">/blogs/</span>
-
                       <span className="text-cyan-300">next.js</span>
-
                       <br />
 
                       <span className="text-slate-500">↓</span>
-
                       <br />
 
                       <span className="text-violet-400">params.slug</span>
-
                       <span className="text-slate-500">{" = "}</span>
-
                       <span className="text-emerald-300">"next.js"</span>
                     </code>
                   </div>
                 </div>
               </section>
+
               <section id="project-structure" className="scroll-reveal-left">
                 <div className="mb-5 flex items-center gap-3">
                   <span className="h-8 w-1 rounded-full bg-gradient-to-b from-cyan-400 to-violet-500" />
@@ -340,6 +341,7 @@ export default async function BlogPage({ params }) {
                   </pre>
                 </div>
               </section>
+
               <section id="data-driven" className="scroll-reveal-up">
                 <div className="mb-5 flex items-center gap-3">
                   <span className="h-8 w-1 rounded-full bg-gradient-to-b from-cyan-400 to-violet-500" />
@@ -364,13 +366,13 @@ export default async function BlogPage({ params }) {
 
                   <pre className="overflow-x-auto p-5 font-mono text-xs leading-7 text-slate-300 sm:text-sm">
                     {`const blog = blogData[slug];
-
 if (!blog) {
   notFound();
 }`}
                   </pre>
                 </div>
               </section>
+
               <section id="performance" className="scroll-reveal-scale">
                 <div className="mb-5 flex items-center gap-3">
                   <span className="h-8 w-1 rounded-full bg-gradient-to-b from-cyan-400 to-violet-500" />
@@ -414,6 +416,7 @@ if (!blog) {
                   </div>
                 </div>
               </section>
+
               <section id="developer-experience" className="scroll-reveal-up">
                 <div className="mb-5 flex items-center gap-3">
                   <span className="h-8 w-1 rounded-full bg-gradient-to-b from-cyan-400 to-violet-500" />
@@ -438,6 +441,7 @@ if (!blog) {
                   assembled from unrelated components.
                 </p>
               </section>
+
               <section id="best-practices">
                 <div className="mb-5 flex items-center gap-3">
                   <span className="h-8 w-1 rounded-full bg-gradient-to-b from-cyan-400 to-violet-500" />
@@ -502,6 +506,7 @@ if (!blog) {
                   </div>
                 </div>
               </section>
+
               <section
                 id="key-takeaway"
                 className="scroll-reveal-zoom rounded-3xl border border-cyan-400/10 bg-gradient-to-br from-cyan-400/[0.07] via-white/[0.02] to-violet-500/[0.06] p-7 sm:p-9"
@@ -520,6 +525,7 @@ if (!blog) {
                   behavior, visual rhythm and meaningful interaction states.
                 </p>
               </section>
+
               <section id="conclusion" className="scroll-reveal-left">
                 <div className="mb-5 flex items-center gap-3">
                   <span className="h-8 w-1 rounded-full bg-gradient-to-b from-cyan-400 to-violet-500" />
@@ -616,7 +622,9 @@ if (!blog) {
                   Final Thoughts
                 </a>
               </div>
+
               <div className="my-6 h-px bg-white/10" />
+
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
                 Current Slug
               </p>
@@ -626,6 +634,7 @@ if (!blog) {
                   {slug}
                 </p>
               </div>
+
               <p className="mt-6 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
                 Tags
               </p>

@@ -1,9 +1,10 @@
 import Link from "next/link";
 
-export let metadata = {
-  title : "404 (Not Found Page)",
-  description : "Hello , there is a 404 or Not Found Page . Unfortunately, the page you were looking for was not found.",
-}
+export const metadata = {
+  title: "404 (Not Found Page)",
+  description:
+    "Hello, there is a 404 or Not Found Page. Unfortunately, the page you were looking for was not found.",
+};
 
 export default function NotFound() {
   return (
@@ -12,6 +13,7 @@ export default function NotFound() {
         <div className="absolute left-1/2 top-[-260px] h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-cyan-400/[0.07] blur-[150px]" />
         <div className="absolute bottom-[-220px] right-[-160px] h-[520px] w-[520px] rounded-full bg-violet-500/[0.07] blur-[150px]" />
         <div className="absolute bottom-[10%] left-[-180px] h-[420px] w-[420px] rounded-full bg-blue-500/[0.05] blur-[140px]" />
+
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{
@@ -20,6 +22,7 @@ export default function NotFound() {
             backgroundSize: "64px 64px",
           }}
         />
+
         <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-400/[0.04] shadow-[0_0_120px_rgba(34,211,238,0.03)]" />
       </div>
 
@@ -163,7 +166,7 @@ export default function NotFound() {
                           <span className="text-slate-600">06 </span>
                           {"\n"}
                           <span className="text-slate-600">07 </span>
-                          <span className="text-slate-500">{"// "}</span>
+                          <span className="text-slate-500">// </span>
                           <span className="text-slate-400">
                             Route not found
                           </span>
