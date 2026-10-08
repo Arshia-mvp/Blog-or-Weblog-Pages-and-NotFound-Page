@@ -25,7 +25,6 @@ export const metadata = {
 
 export default async function BlogPage({ params }) {
   const { slug } = await params;
-
   const blog = blogData[slug];
 
   if (!blog) {
@@ -49,11 +48,8 @@ export default async function BlogPage({ params }) {
         />
 
         <div className="absolute left-1/2 top-[-260px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-cyan-400/[0.08] blur-[140px]" />
-
         <div className="absolute bottom-[-180px] right-[-140px] h-[420px] w-[420px] rounded-full bg-violet-500/[0.08] blur-[130px]" />
-
         <div className="absolute left-[-180px] top-[40%] h-[360px] w-[360px] rounded-full bg-blue-500/[0.06] blur-[120px]" />
-
         <div className="absolute right-[25%] top-[55%] h-[260px] w-[260px] rounded-full bg-cyan-400/[0.04] blur-[110px]" />
       </div>
 
@@ -62,11 +58,15 @@ export default async function BlogPage({ params }) {
           <Link href="/" className="transition-colors hover:text-cyan-400">
             Home
           </Link>
+
           <span>/</span>
+
           <Link href="/blogs" className="transition-colors hover:text-cyan-400">
             Blogs
           </Link>
+
           <span>/</span>
+
           <span className="text-slate-300">{slug}</span>
         </nav>
 
@@ -142,7 +142,6 @@ export default async function BlogPage({ params }) {
             <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-2 shadow-2xl shadow-black/30 backdrop-blur-xl">
               <div className="relative min-h-[390px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-900/90 sm:min-h-[460px]">
                 <div className="absolute left-[-80px] top-[-80px] h-56 w-56 rounded-full bg-cyan-400/20 blur-[100px]" />
-
                 <div className="absolute bottom-[-80px] right-[-80px] h-56 w-56 rounded-full bg-violet-500/20 blur-[100px]" />
 
                 <div className="relative m-5 overflow-hidden rounded-2xl border border-white/10 bg-black/30 shadow-2xl">
@@ -280,10 +279,8 @@ export default async function BlogPage({ params }) {
                       <span className="text-slate-500">/blogs/</span>
                       <span className="text-cyan-300">next.js</span>
                       <br />
-
                       <span className="text-slate-500">↓</span>
                       <br />
-
                       <span className="text-violet-400">params.slug</span>
                       <span className="text-slate-500">{" = "}</span>
                       <span className="text-emerald-300">"next.js"</span>
@@ -310,10 +307,15 @@ export default async function BlogPage({ params }) {
                 <div className="mt-7 rounded-2xl border border-white/10 bg-[#080c14] p-6 shadow-xl shadow-black/20">
                   <pre className="overflow-x-auto font-mono text-sm leading-7 text-slate-300">
                     {`app/
+
 ├── layout.jsx
+
 ├── page.jsx
+
 └── blogs/
+
     └── [slug]/
+
         └── page.jsx`}
                   </pre>
                 </div>
@@ -343,8 +345,11 @@ export default async function BlogPage({ params }) {
 
                   <pre className="overflow-x-auto p-5 font-mono text-xs leading-7 text-slate-300 sm:text-sm">
                     {`const blog = blogData[slug];
+
 if (!blog) {
+
   notFound();
+
 }`}
                   </pre>
                 </div>

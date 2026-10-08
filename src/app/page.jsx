@@ -1,5 +1,7 @@
 import Link from "next/link";
+
 import { Suspense } from "react";
+
 import Loading from "./loading";
 
 export const metadata = {
@@ -18,7 +20,9 @@ export default async function Home() {
       <Suspense fallback={<Loading />}>
         <div className="pointer-events-none absolute inset-0 -z-30">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(34,211,238,0.10),transparent_28%),radial-gradient(circle_at_85%_32%,rgba(139,92,246,0.09),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(59,130,246,0.06),transparent_34%)]" />
+
           <div className="dev-orb dev-orb-cyan absolute -left-48 top-[18%] h-[34rem] w-[34rem] rounded-full bg-cyan-500/[0.04] blur-[150px]" />
+
           <div className="dev-orb dev-orb-violet absolute -right-48 top-[42%] h-[38rem] w-[38rem] rounded-full bg-violet-500/[0.045] blur-[170px]" />
         </div>
 
@@ -203,9 +207,7 @@ export default async function Home() {
                       <div className="relative flex items-center justify-between border-b border-white/[0.07] bg-white/[0.02] px-4 py-3">
                         <div className="flex items-center gap-2">
                           <span className="h-3 w-3 rounded-full bg-rose-400/80 transition duration-300 hover:scale-125" />
-
                           <span className="h-3 w-3 rounded-full bg-amber-300/80 transition duration-300 hover:scale-125" />
-
                           <span className="h-3 w-3 rounded-full bg-emerald-400/80 transition duration-300 hover:scale-125" />
                         </div>
 
@@ -607,10 +609,15 @@ export default async function Home() {
                     </p>
 
                     <p className="pl-4 text-slate-500">├── layout.js</p>
+
                     <p className="pl-4 text-cyan-300">├── page.jsx</p>
+
                     <p className="pl-4 text-violet-300">├── loading.js</p>
+
                     <p className="pl-4 text-slate-500">└── blogs/</p>
+
                     <p className="pl-8 text-slate-500">└── [slug]/</p>
+
                     <p className="pl-12 text-emerald-300">└── page.jsx</p>
                   </div>
                 </div>
