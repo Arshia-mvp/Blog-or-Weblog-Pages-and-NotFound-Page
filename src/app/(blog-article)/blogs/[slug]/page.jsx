@@ -23,6 +23,33 @@ export const metadata = {
     "Hello, there is a slug(Next.js) Page. this page about blog/slug or next.js page. descriptions about next.js page.",
 };
 
+<<<<<<< HEAD
+=======
+export async function generateStaticParams() {
+  let blogs = [
+    {
+      id: "next.js",
+    },
+    {
+      id: "react",
+    },
+    {
+      id: "javascript",
+    },
+    {
+      id: "tailwind-css",
+    },
+    {
+      id: "front-end-practices",
+    },
+  ];
+
+  return blogs.map((weblog) => ({
+    id: weblog.id,
+  }));
+}
+
+>>>>>>> 4121219 (my project updated , my project added a SSG)
 export default async function BlogPage({ params }) {
   const { slug } = await params;
   const blog = blogData[slug];
